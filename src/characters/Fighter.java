@@ -1,8 +1,10 @@
+package characters;
+
 public abstract class Fighter {
     protected String name;
     protected double HP;
     protected double DEFENSE;
-    protected  double KI;
+    protected double KI;
     protected double POWER;
     protected double ATTACK;
 
@@ -45,6 +47,57 @@ public abstract class Fighter {
             System.out.println(target.name + ": Ouchh!!");
         }
         
+    }
+
+
+// getters setters
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public double getHP() {
+        return HP;
+    }
+
+    public void setHP(double HP) {
+        this.HP = HP;
+    }
+
+    public double getDEFENSE() {
+        return DEFENSE;
+    }
+
+    public void setDEFENSE(double DEFENSE) {
+        this.DEFENSE = DEFENSE;
+    }
+
+    public double getKI() {
+        return KI;
+    }
+
+    public void setKI(double KI) {
+        this.KI = KI;
+    }
+
+    public double getPOWER() {
+        return POWER;
+    }
+
+    public void setPOWER(double POWER) {
+        this.POWER = POWER;
+    }
+
+    public double getATTACK() {
+        return ATTACK;
+    }
+
+    public void setATTACK(double ATTACK) {
+        this.ATTACK = ATTACK;
     }
 
  
