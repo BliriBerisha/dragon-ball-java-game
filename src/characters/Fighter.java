@@ -21,7 +21,7 @@ public abstract class Fighter {
         this.ATTACK = ATTACK;
     }
 
-    public abstract void specialMove();
+    public abstract void specialMove(Fighter fighter);
     
     // is dead , is alive
     public boolean isAlive() {
@@ -30,6 +30,14 @@ public abstract class Fighter {
         
     public boolean isDead() {
         return !isAlive();
+    }
+
+    public void checkHP() {
+         if (isDead()) {
+            System.out.println(name + " is dead! HP: " + HP);
+        } else {
+            System.out.println(name + ": Ouchh!!");
+        }
     }
 
     // damageCombat
@@ -42,15 +50,21 @@ public abstract class Fighter {
         }
 
     }
+    
+
     public void ATTACK(Fighter target) {
         target.takeDamage(ATTACK);
         System.out.println(name + "attacks: " + target.name + " for: " + ATTACK + " damage!");
-        if (target.isDead()) {
-            System.out.println(target.name + " is dead! HP: " + target.HP);
-        } else {
-            System.out.println(target.name + ": Ouchh!!");
+        target.checkHP();
+    }
+
+
+    public void takeUltimateDamage() {
+        double actualUltimate = Math.max(0,((HP+DEFENSE+KI+POWER+ATTACK)/5));
+        HP -= actualUltimate;
+         if (HP <= 0) {
+            HP = 0;
         }
-        
     }
 
 
@@ -122,4 +136,21 @@ public abstract class Fighter {
 
  
 
+// end of setters and getters
+
+}
+
+
+ class Goku extends Fighter{
+    
+    public Goku() {
+        super("Goku", 100,20,100,1000,10);
+    }
+    @Override
+    public void specialMove(Fighter fighter) {
+        System.err.println("Ka...mee...haa..meeeeee.. HAAAAAAAAAA!");
+        fighter.takeUltimateDamage();
+        System.out.println(name + "attacks: " + fighter.name + " for: " + (HP+((DEFENSE+KI+POWER+ATTACK)/5)) + " damage!");
+        fighter.checkHP();
+    }
 }

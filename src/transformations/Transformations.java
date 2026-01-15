@@ -23,7 +23,10 @@ public abstract class Transformations {
  
     
 } 
- 
+
+
+
+ //kaioken
  class KAIOKEN extends Transformations {
     protected int multiplier;
     public KAIOKEN(int multiplier) {
