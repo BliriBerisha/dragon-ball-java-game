@@ -1,4 +1,5 @@
 package characters;
+import transformations.Transormations;
 
 public abstract class Fighter {
     protected String name;

@@ -1,0 +1,15 @@
+# Java build outputs
+*.class
+*.log
+/bin/
+/out/
+
+# IDEs
+/.idea/
+
+# VS Code (keep shared project settings)
+/.vscode/*
+!.vscode/settings.json
+!.vscode/extensions.json
+!.vscode/launch.json
+!.vscode/tasks.json
