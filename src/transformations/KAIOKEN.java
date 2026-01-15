@@ -19,6 +19,7 @@ public class KAIOKEN extends Transformations {
         fighter.setKI(fighter.getKI() * multiplier);
         fighter.setPOWER(fighter.getPOWER() * multiplier);
         fighter.setATTACK(fighter.getATTACK() * multiplier);
+        System.out.println("Transformed to: " + name);
         } else {
             System.out.println("I'm already transformed to " + name);
         }
@@ -40,4 +41,15 @@ public class KAIOKEN extends Transformations {
        
         
     }
+
+    public int getMultiplier() {
+        return multiplier;
+    }
+
+    public void setMultiplier(int multiplier) {
+        this.multiplier = multiplier;
+    }
+
+
+
 }

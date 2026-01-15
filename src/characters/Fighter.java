@@ -1,5 +1,6 @@
 package characters;
 import java.util.ArrayList;
+import transformations.KAIOKEN;
 import transformations.Transformations;
 
 
@@ -36,7 +37,29 @@ public abstract class Fighter {
     public final void addTransformations(Transformations form) {
         forms.add(form);
     }
-    
+
+
+
+
+// form logic from transformations
+
+
+    public void transform(int multiplier) {
+
+        for (Transformations t : forms) {
+            if (t instanceof KAIOKEN) {
+                KAIOKEN k = (KAIOKEN) t;
+                if (k.getMultiplier() == multiplier) {
+                    k.transform(this);
+                    break;
+                }
+            }
+        }
+    }
+
+
+
+
     // is dead , is alive
     public boolean isAlive() {
         return HP > 0;
@@ -55,6 +78,8 @@ public abstract class Fighter {
     }
 
     // damageCombat
+
+
 
     public void takeDamage(double damage) {
         double actualDamage = Math.max(0, damage - DEFENSE);
@@ -80,6 +105,14 @@ public abstract class Fighter {
             HP = 0;
         }
     }
+
+
+
+
+
+
+
+
 
 
 // getters setters
@@ -132,7 +165,7 @@ public abstract class Fighter {
         this.ATTACK = ATTACK;
     }
 
-    public boolean isIsTransformed() {
+    public boolean IsTransformed() {
         return isTransformed;
     }
 

@@ -9,7 +9,9 @@ public class Goku extends Fighter{
 
         //register forms
         addTransformations(new KAIOKEN(2));
-
+        addTransformations(new KAIOKEN(4));
+        addTransformations(new KAIOKEN(10));
+        addTransformations(new KAIOKEN(20));
     }
     @Override
     public void specialMove(Fighter fighter) {

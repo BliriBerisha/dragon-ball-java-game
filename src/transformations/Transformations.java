@@ -20,6 +20,15 @@ public abstract class Transformations {
 
     public abstract void transform(Fighter fighter);
     public abstract void detransform(Fighter fighter);
+
+    public String getName() {
+        return name;
+    }
+
+    @Override
+    public String toString() {
+        return name;
+    }
  
     
 } 
