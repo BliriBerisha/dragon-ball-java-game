@@ -7,6 +7,10 @@ public abstract class Fighter {
     protected double KI;
     protected double POWER;
     protected double ATTACK;
+    //transform
+    protected boolean isHumanTransformed = false;
+    protected boolean isTransformed = false;
+    
 
     public Fighter(String name, double HP,double DEFENSE, double KI, double POWER, double ATTACK) {
         this.name = name;
@@ -98,6 +102,14 @@ public abstract class Fighter {
 
     public void setATTACK(double ATTACK) {
         this.ATTACK = ATTACK;
+    }
+
+    public boolean isIsTransformed() {
+        return isTransformed;
+    }
+
+    public void setIsTransformed(boolean isTransformed) {
+        this.isTransformed = isTransformed;
     }
 
  
