@@ -1,4 +1,8 @@
 package characters;
+import java.util.ArrayList;
+import transformations.Transformations;
+
+
 
 public abstract class Fighter {
     protected String name;
@@ -10,6 +14,12 @@ public abstract class Fighter {
     //transform
     protected boolean isHumanTransformed = false;
     protected boolean isTransformed = false;
+
+    //forms
+    protected ArrayList<Transformations> forms = new ArrayList<>();
+    protected Transformations currentForm;
+
+
     
 
     public Fighter(String name, double HP,double DEFENSE, double KI, double POWER, double ATTACK) {
@@ -22,6 +32,10 @@ public abstract class Fighter {
     }
 
     public abstract void specialMove(Fighter fighter);
+    //add forms
+    public final void addTransformations(Transformations form) {
+        forms.add(form);
+    }
     
     // is dead , is alive
     public boolean isAlive() {
@@ -141,16 +155,3 @@ public abstract class Fighter {
 }
 
 
- class Goku extends Fighter{
-    
-    public Goku() {
-        super("Goku", 100,20,100,1000,10);
-    }
-    @Override
-    public void specialMove(Fighter fighter) {
-        System.err.println("Ka...mee...haa..meeeeee.. HAAAAAAAAAA!");
-        fighter.takeUltimateDamage();
-        System.out.println(name + "attacks: " + fighter.name + " for: " + (HP+((DEFENSE+KI+POWER+ATTACK)/5)) + " damage!");
-        fighter.checkHP();
-    }
-}
