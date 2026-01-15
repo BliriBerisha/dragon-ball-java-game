@@ -1,5 +1,4 @@
 package characters;
-import transformations.Transormations;
 
 public abstract class Fighter {
     protected String name;
@@ -111,6 +110,14 @@ public abstract class Fighter {
 
     public void setIsTransformed(boolean isTransformed) {
         this.isTransformed = isTransformed;
+    }
+
+    public boolean getIsHumanTransformed() {
+        return isHumanTransformed;
+    }
+
+    public void setIsHumanTransformed(boolean isHumanTransformed) {
+        this.isHumanTransformed = isHumanTransformed;
     }
 
  

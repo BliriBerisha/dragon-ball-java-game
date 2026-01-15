@@ -32,8 +32,8 @@ public abstract class Transformations {
     }
     @Override
     public void transform(Fighter fighter) {
-        if (fighter.isIsTransformed() == false) {
-        fighter.setIsTransformed(true);
+        if (fighter.getIsHumanTransformed() == false) {
+        fighter.setIsHumanTransformed(true);
         fighter.setHP(fighter.getHP() * multiplier);
         fighter.setDEFENSE(fighter.getDEFENSE() * multiplier);
         fighter.setKI(fighter.getKI() * multiplier);
@@ -47,8 +47,8 @@ public abstract class Transformations {
     }
     @Override
     public void detransform(Fighter fighter) {
-        if (fighter.isIsTransformed() == true) {
-        fighter.setIsTransformed(false);
+        if (fighter.getIsHumanTransformed() == true) {
+        fighter.setIsHumanTransformed(false);
         fighter.setHP(fighter.getHP() / multiplier);
         fighter.setDEFENSE(fighter.getDEFENSE() / multiplier);
         fighter.setKI(fighter.getKI() / multiplier);
