@@ -1,6 +1,7 @@
 package characters;
 
 import transformations.KAIOKEN;
+import transformations.SuperSaiyan;
 
 public class Goku extends Fighter{
     
@@ -12,6 +13,8 @@ public class Goku extends Fighter{
         addTransformations(new KAIOKEN(4));
         addTransformations(new KAIOKEN(10));
         addTransformations(new KAIOKEN(20));
+        addTransformations(new KAIOKEN(500));
+     addTransformations(new SuperSaiyan(500));
     }
     @Override
     public void specialMove(Fighter fighter) {

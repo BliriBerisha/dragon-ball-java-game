@@ -6,6 +6,10 @@ public class Main {
         System.out.println("🐉 Welcome to Dragon Ball Battle Game!");
 
         Goku goku = new Goku();
+        goku.transformTo("KAIOKEN",2);
+       
+
+
 
 
 
