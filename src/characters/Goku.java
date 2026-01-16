@@ -14,7 +14,7 @@ public class Goku extends Fighter{
         addTransformations(new KAIOKEN(20));
     }
     @Override
-    public void specialMove(Fighter fighter) {
+    public void specialMoveUse(Fighter fighter) {
         System.err.println("Ka...mee...haa..meeeeee.. HAAAAAAAAAA!");
         fighter.takeUltimateDamage();
         System.out.println(name + " attacks: " + fighter.name + " for: " + (HP+((DEFENSE+KI+POWER+ATTACK)/5)) + " damage!");

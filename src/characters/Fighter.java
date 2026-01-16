@@ -32,7 +32,7 @@ public abstract class Fighter {
         this.ATTACK = ATTACK;
     }
 
-    public abstract void specialMove(Fighter fighter);
+    public abstract void specialMoveUse(Fighter fighter);
     //add forms
     public final void addTransformations(Transformations form) {
         forms.add(form);
