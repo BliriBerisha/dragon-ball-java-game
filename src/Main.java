@@ -7,21 +7,8 @@ public class Main {
 
         Goku goku = new Goku();
 
-        goku.transform(2);
-        
-
-        goku.transform(3);
-        System.out.println(goku.getHP());
-        System.out.println(goku.getIsHumanTransformed());
-       
-
-        // Uses the transformations registered in Goku's constructor
-     
-        
 
 
-        // or equivalently:
-        // goku.transform(goku.getForms().get(0));
 
        
     }

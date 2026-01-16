@@ -17,7 +17,7 @@ public class Goku extends Fighter{
     public void specialMove(Fighter fighter) {
         System.err.println("Ka...mee...haa..meeeeee.. HAAAAAAAAAA!");
         fighter.takeUltimateDamage();
-        System.out.println(name + "attacks: " + fighter.name + " for: " + (HP+((DEFENSE+KI+POWER+ATTACK)/5)) + " damage!");
+        System.out.println(name + " attacks: " + fighter.name + " for: " + (HP+((DEFENSE+KI+POWER+ATTACK)/5)) + " damage!");
         fighter.checkHP();
     }
 }
