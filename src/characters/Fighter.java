@@ -45,19 +45,19 @@ public abstract class Fighter {
 // form logic from transformations
 
 
-    public void transformTo(String formName,int multiplier) {
+    public void transformTo(String formName,String formINDEX) {
 
         for (Transformations t : forms) {
             if (t instanceof KAIOKEN) {
                 KAIOKEN k = (KAIOKEN) t;
-                if ((k.getMultiplier() == multiplier) && (k.getName() == formName)) {
+                if ((k.getName() == formName) && (formINDEX == k.getFormINDEX())) {
                     k.transform(this);
                     currentForm = k;
                     break;
                 }
             } else if(t instanceof SuperSaiyan) {
                 SuperSaiyan s = (SuperSaiyan) t;
-                if (s.getMultiplier() == multiplier) {
+                if ((s.getName() == formName) && (formINDEX == s.getFormINDEX())) {
                     s.transform(this);
                     currentForm = s;
                     break;

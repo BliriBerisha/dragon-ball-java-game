@@ -4,11 +4,12 @@ package transformations;
 
 import characters.Fighter;
 
-public class SuperSaiyan extends Transformations {
+public class SuperSaiyan extends Transformations {   
     protected int multiplier;
-    public SuperSaiyan(int multiplier) {
-        super("SuperSaiyan",0,0,0,0,0);
+    public SuperSaiyan(String formINDEX,int multiplier) {
+        super("SuperSaiyan", formINDEX, 0, 0, 0, 0, 0);
         this.multiplier = multiplier;
+        this.formINDEX = formINDEX;
     }
     @Override
     public void transform(Fighter fighter) {
@@ -19,9 +20,9 @@ public class SuperSaiyan extends Transformations {
         fighter.setKI(fighter.getKI() * multiplier);
         fighter.setPOWER(fighter.getPOWER() * multiplier);
         fighter.setATTACK(fighter.getATTACK() * multiplier);
-        System.out.println("Transformed to: " + name);
+        System.out.println("Transformed to: " + name + " " + formINDEX);
         } else {
-            System.out.println("I'm already transformed to " + name);
+            System.out.println("I'm already transformed to " + name + " " + formINDEX);
         }
        
         
@@ -36,7 +37,7 @@ public class SuperSaiyan extends Transformations {
         fighter.setPOWER(fighter.getPOWER() / multiplier);
         fighter.setATTACK(fighter.getATTACK() / multiplier);
         } else {
-            System.out.println("You dont haven't transformed yet to detransform!");
+            System.out.println("You  haven't transformed yet to detransform!");
         }
        
         

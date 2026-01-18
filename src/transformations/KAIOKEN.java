@@ -6,9 +6,10 @@ import characters.Fighter;
 
 public class KAIOKEN extends Transformations {
     protected int multiplier;
-    public KAIOKEN(int multiplier) {
-        super("KAIOKEN",0,0,0,0,0);
+    public KAIOKEN(String formINDEX, int multiplier) {
+        super("KAIOKEN", formINDEX, 0, 0, 0, 0, 0);
         this.multiplier = multiplier;
+        
     }
     @Override
     public void transform(Fighter fighter) {
