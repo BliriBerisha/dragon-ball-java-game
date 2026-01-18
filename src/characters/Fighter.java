@@ -1,6 +1,7 @@
 package characters;
 import java.util.ArrayList;
 import transformations.KAIOKEN;
+import transformations.SuperSaiyan;
 import transformations.Transformations;
 
 
@@ -44,13 +45,21 @@ public abstract class Fighter {
 // form logic from transformations
 
 
-    public void transform(int multiplier) {
+    public void transformTo(String formName,String formINDEX) {
 
         for (Transformations t : forms) {
             if (t instanceof KAIOKEN) {
                 KAIOKEN k = (KAIOKEN) t;
-                if (k.getMultiplier() == multiplier) {
+                if ((k.getName() == formName) && (formINDEX == k.getFormINDEX())) {
                     k.transform(this);
+                    currentForm = k;
+                    break;
+                }
+            } else if(t instanceof SuperSaiyan) {
+                SuperSaiyan s = (SuperSaiyan) t;
+                if ((s.getName() == formName) && (formINDEX == s.getFormINDEX())) {
+                    s.transform(this);
+                    currentForm = s;
                     break;
                 }
             }
@@ -165,7 +174,7 @@ public abstract class Fighter {
         this.ATTACK = ATTACK;
     }
 
-    public boolean IsTransformed() {
+    public boolean getIsTransformed() {
         return isTransformed;
     }
 
@@ -183,7 +192,24 @@ public abstract class Fighter {
 
  
 
+
 // end of setters and getters
+
+    public ArrayList<Transformations> getForms() {
+        return forms;
+    }
+
+    public void setForms(ArrayList<Transformations> forms) {
+        this.forms = forms;
+    }
+
+    public Transformations getCurrentForm() {
+        return currentForm;
+    }
+
+    public void setCurrentForm(Transformations currentForm) {
+        this.currentForm = currentForm;
+    }
 
 }
 
