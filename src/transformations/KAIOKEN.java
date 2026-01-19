@@ -1,7 +1,4 @@
 package transformations;
-
-//kaioken
-
 import characters.Fighter;
 
 public class KAIOKEN extends Transformations {
@@ -15,15 +12,18 @@ public class KAIOKEN extends Transformations {
     public void transform(Fighter fighter) {
         if (fighter.getIsHumanTransformed() == false) {
         fighter.setIsHumanTransformed(true);
-        fighter.setCurrentForm(this);
+        fighter.setCurrentHumanForm(this);
         fighter.setHP(fighter.getHP() * multiplier);
         fighter.setDEFENSE(fighter.getDEFENSE() * multiplier);
         fighter.setKI(fighter.getKI() * multiplier);
         fighter.setPOWER(fighter.getPOWER() * multiplier);
         fighter.setATTACK(fighter.getATTACK() * multiplier);
         System.out.println("Transformed to: " + name);
-        } else {
-            System.out.println("I'm already transformed to " + name);
+        } else if (fighter.getCurrentHumanForm() != this) {
+            fighter.getCurrentHumanForm().detransform(fighter);
+            transform(fighter);
+        } else if (fighter.getCurrentHumanForm().equals(this)) {
+            System.out.println("Im already transformed to: " + name + " X" + formINDEX);
         }
        
         
@@ -37,9 +37,9 @@ public class KAIOKEN extends Transformations {
         fighter.setKI(fighter.getKI() / multiplier);
         fighter.setPOWER(fighter.getPOWER() / multiplier);
         fighter.setATTACK(fighter.getATTACK() / multiplier);
-        fighter.setCurrentForm(null);
+        fighter.setCurrentHumanForm(null);
         } else {
-            System.out.println("You dont haven't transformed yet to detransform!");
+            System.out.println("You  haven't transformed yet to detransform!");
         }
        
         

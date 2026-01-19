@@ -19,6 +19,7 @@ public abstract class Fighter {
 
     //forms
     protected ArrayList<Transformations> forms = new ArrayList<>();
+    protected Transformations currentHumanForm;
     protected Transformations currentForm;
 
 
@@ -208,6 +209,16 @@ public abstract class Fighter {
     public void setCurrentForm(Transformations currentForm) {
         this.currentForm = currentForm;
     }
+
+    public Transformations getCurrentHumanForm() {
+        return currentHumanForm;
+    }
+
+    public void setCurrentHumanForm(Transformations currentHumanForm) {
+        this.currentHumanForm = currentHumanForm;
+    }
+
+
 
 }
 

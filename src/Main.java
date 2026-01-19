@@ -7,9 +7,12 @@ public class Main {
         Goku goku = new Goku();
         goku.transformTo("SuperSaiyan", "2");
         System.out.println("HP: " + goku.getHP() + " form: " + goku.getCurrentForm());
-
-        goku.transformTo("SuperSaiyan", "2");
+        goku.transformTo("KAIOKEN", "X4");
+        System.out.println("HP: " + goku.getHP() + " form: " + goku.getCurrentHumanForm());
+        goku.transformTo("SuperSaiyan", "BLUE");
         System.out.println("HP: " + goku.getHP());
+      
+        
 
 
         
