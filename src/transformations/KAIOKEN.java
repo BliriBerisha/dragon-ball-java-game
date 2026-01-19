@@ -15,6 +15,7 @@ public class KAIOKEN extends Transformations {
     public void transform(Fighter fighter) {
         if (fighter.getIsHumanTransformed() == false) {
         fighter.setIsHumanTransformed(true);
+        fighter.setCurrentForm(this);
         fighter.setHP(fighter.getHP() * multiplier);
         fighter.setDEFENSE(fighter.getDEFENSE() * multiplier);
         fighter.setKI(fighter.getKI() * multiplier);
@@ -36,6 +37,7 @@ public class KAIOKEN extends Transformations {
         fighter.setKI(fighter.getKI() / multiplier);
         fighter.setPOWER(fighter.getPOWER() / multiplier);
         fighter.setATTACK(fighter.getATTACK() / multiplier);
+        fighter.setCurrentForm(null);
         } else {
             System.out.println("You dont haven't transformed yet to detransform!");
         }

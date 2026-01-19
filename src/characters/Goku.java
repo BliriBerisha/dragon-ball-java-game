@@ -15,13 +15,13 @@ public class Goku extends Fighter{
         addTransformations(new KAIOKEN("X10", 10)); // Kaioken x10
         addTransformations(new KAIOKEN("X20", 20)); // Kaioken x20 (technique forms)
         // SuperSaiyan
-        addTransformations(new SuperSaiyan("1", 50));
-        addTransformations(new SuperSaiyan("2", 100));
-        addTransformations(new SuperSaiyan("3", 400));
-        addTransformations(new SuperSaiyan("4", 500));
+        addTransformations(new SuperSaiyan("1", 50)); // SSJ1
+        addTransformations(new SuperSaiyan("2", 100)); // SSJ2
+        addTransformations(new SuperSaiyan("3", 400)); // SSJ3
+        addTransformations(new SuperSaiyan("4", 500)); // SSJ4
         // Super SSGSS's
-        addTransformations(new SuperSaiyan("GOD", 40000));
-        addTransformations(new SuperSaiyan("BLUE", 2000000));
+        addTransformations(new SuperSaiyan("GOD", 40000)); // SSJ GOD
+        addTransformations(new SuperSaiyan("BLUE", 2000000)); // SSJ BLUE
 
 
 
