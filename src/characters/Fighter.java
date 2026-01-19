@@ -113,7 +113,18 @@ public abstract class Fighter {
     }
 
 
-
+    public void showStats () {
+        System.out.println(
+                name + " stats | " +
+                "HP=" + HP + " | " +
+                "DEF=" + DEFENSE + " | " +
+                "KI=" + KI + " | " +
+                "PWR=" + POWER + " | " +
+                "ATK=" + ATTACK + " | " +
+                "Form=" + (currentForm == null ? "None" : (currentForm.getName() + " " + currentForm.getFormINDEX())) + " | " +
+                "HumanForm=" + (currentHumanForm == null ? "None" : (currentHumanForm.getName() + " " + currentHumanForm.getFormINDEX()))
+        );
+    }
 
 
 

@@ -11,7 +11,7 @@ public class Main {
         System.out.println("HP: " + goku.getHP() + " form: " + goku.getCurrentHumanForm());
         goku.transformTo("SuperSaiyan", "BLUE");
         System.out.println("HP: " + goku.getHP());
-      
+        goku.showStats();
         
 
 
