@@ -27,7 +27,7 @@ public abstract class Transformations {
 
     @Override
     public String toString() {
-        return name;
+        return name + " " + getFormINDEX();
     }
  
     // getters and setters

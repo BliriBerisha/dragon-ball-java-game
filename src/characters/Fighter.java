@@ -14,12 +14,12 @@ public abstract class Fighter {
     protected double POWER;
     protected double ATTACK;
     //transform
-    protected boolean isHumanTransformed = false;
+    protected boolean isTechniqueTransformed = false;
     protected boolean isTransformed = false;
 
     //forms
     protected ArrayList<Transformations> forms = new ArrayList<>();
-    protected Transformations currentHumanForm;
+    protected Transformations currentTechniqueForm;
     protected Transformations currentForm;
 
 
@@ -122,7 +122,7 @@ public abstract class Fighter {
                 "PWR=" + POWER + " | " +
                 "ATK=" + ATTACK + " | " +
                 "Form=" + (currentForm == null ? "None" : (currentForm.getName() + " " + currentForm.getFormINDEX())) + " | " +
-                "HumanForm=" + (currentHumanForm == null ? "None" : (currentHumanForm.getName() + " " + currentHumanForm.getFormINDEX()))
+                "TechniqueForm=" + (currentTechniqueForm == null ? "None" : (currentTechniqueForm.getName() + " " + currentTechniqueForm.getFormINDEX()))
         );
     }
 
@@ -190,12 +190,12 @@ public abstract class Fighter {
         this.isTransformed = isTransformed;
     }
 
-    public boolean getIsHumanTransformed() {
-        return isHumanTransformed;
+    public boolean getIsTechniqueTransformed() {
+        return isTechniqueTransformed;
     }
 
-    public void setIsHumanTransformed(boolean isHumanTransformed) {
-        this.isHumanTransformed = isHumanTransformed;
+    public void setIsTechniqueTransformed(boolean isTechniqueTransformed) {
+        this.isTechniqueTransformed = isTechniqueTransformed;
     }
 
  
@@ -219,12 +219,12 @@ public abstract class Fighter {
         this.currentForm = currentForm;
     }
 
-    public Transformations getCurrentHumanForm() {
-        return currentHumanForm;
+    public Transformations getCurrentTechniqueForm() {
+        return currentTechniqueForm;
     }
 
-    public void setCurrentHumanForm(Transformations currentHumanForm) {
-        this.currentHumanForm = currentHumanForm;
+    public void setCurrentTechniqueForm(Transformations currentTechniqueForm) {
+        this.currentTechniqueForm = currentTechniqueForm;
     }
 
 
