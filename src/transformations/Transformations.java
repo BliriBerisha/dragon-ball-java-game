@@ -5,19 +5,19 @@ import characters.Fighter;
 public abstract class Transformations {
     protected String name;
     protected String formINDEX;
-    protected double hpBOOST;
-    protected double defenseBOOST;
-    protected double kiBOOST;
-    protected double powerBOOST;
-    protected double attackBOOST;
-    public Transformations(String name, String formINDEX,double hpBOOST, double defenseBOOST, double kiBOOST, double powerBOOST, double attackBOOST) {
+    protected double HPmultiplier;
+    protected double DEFENSEmultiplier;
+    protected double KImultiplier;
+    protected double POWERmultiplier;
+    protected double ATTACKmultiplier;
+    public Transformations(String name, String formINDEX,double HPmultiplier, double DEFENSEmultiplier, double KImultiplier, double POWERmultiplier, double ATTACKmultiplier) {
         this.formINDEX = formINDEX;
-        this.attackBOOST = attackBOOST;
-        this.defenseBOOST = defenseBOOST;
-        this.hpBOOST = hpBOOST;
-        this.kiBOOST = kiBOOST;
+        this.ATTACKmultiplier = ATTACKmultiplier;
+        this.DEFENSEmultiplier = DEFENSEmultiplier;
+        this.HPmultiplier = HPmultiplier;
+        this.KImultiplier = KImultiplier;
         this.name = name;
-        this.powerBOOST = powerBOOST;
+        this.POWERmultiplier = POWERmultiplier;
     }
 
     public abstract void transform(Fighter fighter);
@@ -43,44 +43,44 @@ public abstract class Transformations {
         this.formINDEX = formINDEX;
     }
 
-    public double getHpBOOST() {
-        return hpBOOST;
+    public double getHPmultiplier() {
+        return HPmultiplier;
     }
 
-    public void setHpBOOST(double hpBOOST) {
-        this.hpBOOST = hpBOOST;
+    public void setHPmultiplier(double HPmultiplier) {
+        this.HPmultiplier = HPmultiplier;
     }
 
-    public double getDefenseBOOST() {
-        return defenseBOOST;
+    public double getDEFENSEmultiplier() {
+        return DEFENSEmultiplier;
     }
 
-    public void setDefenseBOOST(double defenseBOOST) {
-        this.defenseBOOST = defenseBOOST;
+    public void setDEFENSEmultiplier(double DEFENSEmultiplier) {
+        this.DEFENSEmultiplier = DEFENSEmultiplier;
     }
 
-    public double getKiBOOST() {
-        return kiBOOST;
+    public double getKImultiplier() {
+        return KImultiplier;
     }
 
-    public void setKiBOOST(double kiBOOST) {
-        this.kiBOOST = kiBOOST;
+    public void setKImultiplier(double KImultiplier) {
+        this.KImultiplier = KImultiplier;
     }
 
-    public double getPowerBOOST() {
-        return powerBOOST;
+    public double getPOWERmultiplier() {
+        return POWERmultiplier;
     }
 
-    public void setPowerBOOST(double powerBOOST) {
-        this.powerBOOST = powerBOOST;
+    public void setPOWERmultiplier(double POWERmultiplier) {
+        this.POWERmultiplier = POWERmultiplier;
     }
 
-    public double getAttackBOOST() {
-        return attackBOOST;
+    public double getATTACKmultiplier() {
+        return ATTACKmultiplier;
     }
 
-    public void setAttackBOOST(double attackBOOST) {
-        this.attackBOOST = attackBOOST;
+    public void setATTACKmultiplier(double ATTACKmultiplier) {
+        this.ATTACKmultiplier = ATTACKmultiplier;
     }
 
 

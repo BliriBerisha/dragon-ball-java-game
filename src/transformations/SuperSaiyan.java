@@ -5,21 +5,20 @@ package transformations;
 import characters.Fighter;
 
 public class SuperSaiyan extends Transformations {   
-    protected int multiplier;
-    public SuperSaiyan(String formINDEX,int multiplier) {
-        super("SuperSaiyan", formINDEX, 0, 0, 0, 0, 0);
-        this.multiplier = multiplier;
+                //HP DEF KI PWR ATK
+    public SuperSaiyan(String formINDEX, double HPmultiplier, double DEFENSEmultiplier, double KImultiplier, double POWERmultiplier, double ATTACKmultiplier) {
+        super("SuperSaiyan", formINDEX, HPmultiplier, DEFENSEmultiplier, KImultiplier, POWERmultiplier, ATTACKmultiplier);
     }
     @Override
     public void transform(Fighter fighter) {
         if (fighter.getIsTransformed() == false) {
         fighter.setIsTransformed(true);
         fighter.setCurrentForm(this);
-        fighter.setHP(fighter.getHP() * multiplier);
-        fighter.setDEFENSE(fighter.getDEFENSE() * multiplier);
-        fighter.setKI(fighter.getKI() * multiplier);
-        fighter.setPOWER(fighter.getPOWER() * multiplier);
-        fighter.setATTACK(fighter.getATTACK() * multiplier);
+        fighter.setHP(fighter.getHP() * HPmultiplier);
+        fighter.setDEFENSE(fighter.getDEFENSE() * DEFENSEmultiplier);
+        fighter.setKI(fighter.getKI() * KImultiplier);
+        fighter.setPOWER(fighter.getPOWER() * POWERmultiplier);
+        fighter.setATTACK(fighter.getATTACK() * ATTACKmultiplier);
         System.out.println("Transformed to: " + name + " " + formINDEX);
 
 
@@ -36,11 +35,11 @@ public class SuperSaiyan extends Transformations {
     public void detransform(Fighter fighter) {
         if (fighter.getIsTransformed() == true) {
         fighter.setIsTransformed(false);
-        fighter.setHP(fighter.getHP() / multiplier);
-        fighter.setDEFENSE(fighter.getDEFENSE() / multiplier);
-        fighter.setKI(fighter.getKI() / multiplier);
-        fighter.setPOWER(fighter.getPOWER() / multiplier);
-        fighter.setATTACK(fighter.getATTACK() / multiplier);
+        fighter.setHP(fighter.getHP() / HPmultiplier);
+        fighter.setDEFENSE(fighter.getDEFENSE() / DEFENSEmultiplier);
+        fighter.setKI(fighter.getKI() / KImultiplier);
+        fighter.setPOWER(fighter.getPOWER() / POWERmultiplier);
+        fighter.setATTACK(fighter.getATTACK() / ATTACKmultiplier);
         fighter.setCurrentForm(null);
         } else {
             System.out.println("You  haven't transformed yet to detransform!");
@@ -50,11 +49,15 @@ public class SuperSaiyan extends Transformations {
     }
 
     public int getMultiplier() {
-        return multiplier;
+        return (int) HPmultiplier;
     }
 
     public void setMultiplier(int multiplier) {
-        this.multiplier = multiplier;
+        this.HPmultiplier = multiplier;
+        this.DEFENSEmultiplier = multiplier;
+        this.KImultiplier = multiplier;
+        this.POWERmultiplier = multiplier;
+        this.ATTACKmultiplier = multiplier;
     }
 
 
