@@ -3,7 +3,7 @@ package characters;
 public class Beerus extends Fighter{
     
     public Beerus() {
-        super("Beerus", 100,20,100,9000,10);
+        super("Beerus", 900,260,1500,60000,200);
 
         //register forms
 
