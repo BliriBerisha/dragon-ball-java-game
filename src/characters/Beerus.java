@@ -1,12 +1,14 @@
 package characters;
 
+import transformations.GodOfDestruction;
+
 public class Beerus extends Fighter{
     
     public Beerus() {
         super("Beerus", 900,260,1500,60000,200);
 
         //register forms
-
+        addTransformations(new GodOfDestruction("",2, 2, 2, 2,2));
     }
     @Override
     public void specialMoveUse(Fighter fighter) {
