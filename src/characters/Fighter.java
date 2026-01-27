@@ -13,6 +13,12 @@ public abstract class Fighter {
     protected double KI;
     protected double POWER;
     protected double ATTACK;
+
+    protected final double baseHP;
+    protected final double baseDEFENSE;
+    protected final double baseKI;
+    protected final double basePOWER;
+    protected final double baseATTACK;
     //transform
     protected boolean isTechniqueTransformed = false;
     protected boolean isTransformed = false;
@@ -32,6 +38,12 @@ public abstract class Fighter {
         this.KI = KI;
         this.POWER = POWER;
         this.ATTACK = ATTACK;
+
+        this.baseHP = HP;
+        this.baseDEFENSE = DEFENSE;
+        this.baseKI = KI;
+        this.basePOWER = POWER;
+        this.baseATTACK = ATTACK;
     }
 
     public abstract void specialMoveUse(Fighter fighter);
@@ -176,6 +188,26 @@ public abstract class Fighter {
 
     public double getATTACK() {
         return ATTACK;
+    }
+
+    public double getBaseHP() {
+        return baseHP;
+    }
+
+    public double getBaseDEFENSE() {
+        return baseDEFENSE;
+    }
+
+    public double getBaseKI() {
+        return baseKI;
+    }
+
+    public double getBasePOWER() {
+        return basePOWER;
+    }
+
+    public double getBaseATTACK() {
+        return baseATTACK;
     }
 
     public void setATTACK(double ATTACK) {
