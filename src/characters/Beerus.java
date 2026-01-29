@@ -12,7 +12,7 @@ public class Beerus extends Fighter{
     }
     @Override
     public void specialMoveUse(Fighter fighter) {
-        System.err.println("HAKAI...!!!");
+        System.out.println("HAKAI...!!!");
         fighter.setHP(0);
         System.out.println(name + " attacks: " + fighter.name + " for infinite damage!");
         fighter.checkHP();

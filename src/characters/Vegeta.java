@@ -5,7 +5,7 @@ import transformations.SuperSaiyan;
 public class Vegeta extends Fighter{
     
     public Vegeta() {
-        super("Vegeta", 100,20,100,1000,10);
+        super("Vegeta", 140,60,100,1000,10);
 
         //register forms
   addTransformations(new SuperSaiyan("1", 1.1, 1.15 ,1.20 ,1.5 ,1.4)); // SSJ1
@@ -19,9 +19,10 @@ public class Vegeta extends Fighter{
     }
     @Override
     public void specialMoveUse(Fighter fighter) {
-        System.err.println("GALICK..... GUNNNNNNNNN...!!!");
-        fighter.takeUltimateDamage();
-        System.out.println(name + " attacks: " + fighter.name + " for: " + (HP+((DEFENSE+KI+POWER+ATTACK)/5)) + " damage!");
+        System.out.println("GALICK..... GUNNNNNNNNN...!!!");
+        double ultimateDamage = getUltimateGenerator();
+        fighter.takeUltimateDamage(ultimateDamage);
+        System.out.println(name + " attacks: " + fighter.name + " for: " + ultimateDamage + " damage!");
         fighter.checkHP();
     }
 }

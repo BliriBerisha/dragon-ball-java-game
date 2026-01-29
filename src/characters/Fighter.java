@@ -115,14 +115,19 @@ public abstract class Fighter {
         target.checkHP();
     }
 
+    public double getUltimateGenerator() {
+       // actual attack * 2;
+        return this.getATTACK() * 2.0;
+    }
 
-    public void takeUltimateDamage() {
-        double actualUltimate = Math.max(0,((HP+DEFENSE+KI+POWER+ATTACK)/5));
+    public void takeUltimateDamage(double ultimate) {
+        double actualUltimate = Math.max(0, ultimate - DEFENSE);
         HP -= actualUltimate;
          if (HP <= 0) {
             HP = 0;
         }
     }
+
 
 
     public void showStats () {

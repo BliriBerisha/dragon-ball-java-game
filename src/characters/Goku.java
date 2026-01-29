@@ -6,7 +6,7 @@ import transformations.SuperSaiyan;
 public class Goku extends Fighter{
     
     public Goku() {
-        super("Goku", 100,20,100,1000,10);
+        super("Goku", 150,50,100,1000,10);
 
         //register forms
 
@@ -30,9 +30,10 @@ public class Goku extends Fighter{
     }
     @Override
     public void specialMoveUse(Fighter fighter) {
-        System.err.println("Ka...mee...haa..meeeeee.. HAAAAAAAAAA!");
-        fighter.takeUltimateDamage();
-        System.out.println(name + " attacks: " + fighter.name + " for: " + (HP+((DEFENSE+KI+POWER+ATTACK)/5)) + " damage!");
+        System.out.println("Ka...mee...haa..meeeeee.. HAAAAAAAAAA!");
+        double ultimateDamage = getUltimateGenerator();
+        fighter.takeUltimateDamage(ultimateDamage);
+        System.out.println(name + " attacks: " + fighter.name + " for: " + ultimateDamage + " damage!");
         fighter.checkHP();
     }
 }
