@@ -92,6 +92,8 @@ public abstract class Fighter {
             System.out.println(name + " is dead! HP: " + HP);
         } else {
             System.out.println(name + ": Ouchh!!");
+            showStats();
+
         }
     }
 
@@ -101,6 +103,7 @@ public abstract class Fighter {
 
     public void takeDamage(double damage) {
         double actualDamage = Math.max(0, damage - DEFENSE);
+        DEFENSE = Math.max(0, DEFENSE - damage);
         HP -= actualDamage;
         if (HP <= 0) {
             HP = 0;
@@ -122,6 +125,7 @@ public abstract class Fighter {
 
     public void takeUltimateDamage(double ultimate) {
         double actualUltimate = Math.max(0, ultimate - DEFENSE);
+        DEFENSE = Math.max(0, DEFENSE - ultimate);
         HP -= actualUltimate;
          if (HP <= 0) {
             HP = 0;

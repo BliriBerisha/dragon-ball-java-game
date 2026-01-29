@@ -5,7 +5,7 @@ import transformations.SuperSaiyan;
 public class Vegeta extends Fighter{
     
     public Vegeta() {
-        super("Vegeta", 140,60,100,1000,10);
+        super("Vegeta", 140,20,100,1000,10);
 
         //register forms
   addTransformations(new SuperSaiyan("1", 1.1, 1.15 ,1.20 ,1.5 ,1.4)); // SSJ1

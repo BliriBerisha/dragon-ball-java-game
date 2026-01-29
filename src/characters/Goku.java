@@ -6,7 +6,7 @@ import transformations.SuperSaiyan;
 public class Goku extends Fighter{
     
     public Goku() {
-        super("Goku", 150,50,100,1000,10);
+        super("Goku", 150,20,100,1000,10);
 
         //register forms
 
