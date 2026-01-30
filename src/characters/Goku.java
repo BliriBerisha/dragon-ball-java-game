@@ -30,10 +30,15 @@ public class Goku extends Fighter{
     }
     @Override
     public void specialMoveUse(Fighter fighter) {
+        if (KI >= getUltimateGenerator()) {
+            KI -= (getUltimateGenerator() * 0.5);
         System.out.println("Ka...mee...haa..meeeeee.. HAAAAAAAAAA!");
         double ultimateDamage = getUltimateGenerator();
         fighter.takeUltimateDamage(ultimateDamage);
         System.out.println(name + " attacks: " + fighter.name + " for: " + ultimateDamage + " damage!");
         fighter.checkHP();
+        } else {
+            System.out.println(name + "'s KI is depleted can't use Kamehameha. Remaining KI: " + KI);
+        }
     }
 }

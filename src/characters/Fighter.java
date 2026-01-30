@@ -113,10 +113,18 @@ public abstract class Fighter {
     
 
     public void ATTACK(Fighter target) {
+        if (KI >= 10) {
+        KI = KI - (ATTACK * 0.5); // KI WASTER HALF OF ATTACK
         target.takeDamage(ATTACK);
         System.out.println(name + "attacks: " + target.name + " for: " + ATTACK + " damage!");
         target.checkHP();
+        } else {
+            System.out.println( name +"'s KI is depleted can't ATTACK. Remaining KI: " + KI);  
+        }
+
     }
+ 
+    
 
     public double getUltimateGenerator() {
        // actual attack * 2;
