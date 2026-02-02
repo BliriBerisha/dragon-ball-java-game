@@ -8,7 +8,7 @@ public class Main {
         Goku goku = new Goku();
      
         Vegeta vegeta = new Vegeta();
-                      goku.setKI(0);
+        goku.setKI(0);
         goku.ATTACK(vegeta);
                 goku.showStats();
                 goku.setKI(0);
