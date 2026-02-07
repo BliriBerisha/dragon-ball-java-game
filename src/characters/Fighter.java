@@ -1,8 +1,7 @@
 package characters;
+import battle.PVP.*;
 import java.util.ArrayList;
-import transformations.KAIOKEN;
-import transformations.SuperSaiyan;
-import transformations.Transformations;
+import transformations.*;
 
 
 
@@ -13,7 +12,12 @@ public abstract class Fighter {
     protected double KI;
     protected double POWER;
     protected double ATTACK;
+    //scene related
+    protected boolean isAlive;
+    protected Scene currentScene;
 
+
+    //base stats
     protected final double baseHP;
     protected final double baseDEFENSE;
     protected final double baseKI;
@@ -38,6 +42,7 @@ public abstract class Fighter {
         this.KI = KI;
         this.POWER = POWER;
         this.ATTACK = ATTACK;
+        this.isAlive = true;
 
         this.baseHP = HP;
         this.baseDEFENSE = DEFENSE;
@@ -87,13 +92,20 @@ public abstract class Fighter {
         return !isAlive();
     }
 
+    public void setScene(Scene scene) {
+        this.currentScene = scene;
+    }
     public void checkHP() {
          if (isDead()) {
             System.out.println(name + " is dead! HP: " + HP);
+            this.isAlive = false;
+            if (currentScene != null) {
+                currentScene.reduceCurrent_alive();
+            }
+        
         } else {
             System.out.println(name + ": Ouchh!!");
             showStats();
-
         }
     }
 
@@ -103,7 +115,6 @@ public abstract class Fighter {
 
     public void takeDamage(double damage) {
         double actualDamage = Math.max(0, damage - DEFENSE);
-        DEFENSE = Math.max(0, DEFENSE - damage);
         HP -= actualDamage;
         if (HP <= 0) {
             HP = 0;
@@ -133,7 +144,6 @@ public abstract class Fighter {
 
     public void takeUltimateDamage(double ultimate) {
         double actualUltimate = Math.max(0, ultimate - DEFENSE);
-        DEFENSE = Math.max(0, DEFENSE - ultimate);
         HP -= actualUltimate;
          if (HP <= 0) {
             HP = 0;
@@ -155,6 +165,11 @@ public abstract class Fighter {
         );
     }
 
+    @Override
+    public String toString() {
+        return name;
+    }
+
 
 
 
@@ -162,6 +177,8 @@ public abstract class Fighter {
 
 
 // getters setters
+
+
 
     public String getName() {
         return name;
@@ -274,6 +291,14 @@ public abstract class Fighter {
 
     public void setCurrentTechniqueForm(Transformations currentTechniqueForm) {
         this.currentTechniqueForm = currentTechniqueForm;
+    }
+
+    public boolean getIsAlive() {
+        return isAlive;
+    }
+
+    public void setIsAlive(boolean isAlive) {
+        this.isAlive = isAlive;
     }
 
 
