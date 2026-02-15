@@ -6,6 +6,7 @@ import java.util.ArrayList;
 public class Scene {
     protected String name;
     protected String map_name;
+    protected String mode;
     protected boolean gameOver;
     protected ArrayList<Fighter> players_in_field = new ArrayList<>();
     protected Fighter winner;
@@ -44,6 +45,33 @@ public void addPlayerToScene(Fighter fighter) {
     fighter.setScene(this);
     players_in_field.add(fighter);
 }
+
+public void showLeaderboard() {
+        System.out.println("\n╔════════════════════════════════════════════════════════╗");
+        System.out.println("║           🏆  BATTLE LEADERBOARD  🏆                  ║");
+        System.out.println("╠════════════════════════════════════════════════════════╣");
+        System.out.println("║  Battle:   " + String.format("%-42s", name) + "║");
+        System.out.println("║  Location: " + String.format("%-42s", map_name) + "║");
+        System.out.println("║  Mode:     " + String.format("%-42s", mode != null ? mode : "Standard") + "║");
+        System.out.println("╠════════════════════════════════════════════════════════╣");
+        System.out.printf("║ %-4s %-12s %-12s %-10s %-8s ║%n",
+                "Rank", "Character", "Form", "Score", "Kills");
+        System.out.println("╠════════════════════════════════════════════════════════╣");
+        
+        int rank = 1;
+        for (Fighter f : players_in_field) {
+            String formDisplay = f.getCurrentForm() != null ? f.getCurrentForm().toString() : "Base";
+            if (formDisplay.length() > 12) formDisplay = formDisplay.substring(0, 12);
+            String characterName = f.getName();
+            if (characterName.length() > 12) characterName = characterName.substring(0, 12);
+            
+            System.out.printf("║ %-4d %-12s %-12s %-10d %-8d ║%n",
+                    rank++, characterName, formDisplay, f.getPlayer_score(), f.getPlayer_kills());
+        }
+        
+        System.out.println("╚════════════════════════════════════════════════════════╝\n");
+    }
+
 
 
 

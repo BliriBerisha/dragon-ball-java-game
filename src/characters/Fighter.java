@@ -15,6 +15,8 @@ public abstract class Fighter {
     //scene related
     protected boolean isAlive;
     protected Scene currentScene;
+    protected int player_score;
+    protected int player_kills;
 
 
     //base stats
@@ -43,6 +45,7 @@ public abstract class Fighter {
         this.POWER = POWER;
         this.ATTACK = ATTACK;
         this.isAlive = true;
+        this.player_score = 0;
 
         this.baseHP = HP;
         this.baseDEFENSE = DEFENSE;
@@ -127,6 +130,7 @@ public abstract class Fighter {
         if (KI >= 10) {
         KI = KI - (ATTACK * 0.5); // KI WASTER HALF OF ATTACK
         target.takeDamage(ATTACK);
+        player_score += 10;
         System.out.println(name + "attacks: " + target.name + " for: " + ATTACK + " damage!");
         target.checkHP();
         } else {
@@ -300,6 +304,31 @@ public abstract class Fighter {
     public void setIsAlive(boolean isAlive) {
         this.isAlive = isAlive;
     }
+
+    public int getPlayer_score() {
+        return player_score;
+    }
+
+    public void setPlayer_score(int player_score) {
+        this.player_score = player_score;
+    }
+
+    public Scene getCurrentScene() {
+        return currentScene;
+    }
+
+    public void setCurrentScene(Scene currentScene) {
+        this.currentScene = currentScene;
+    }
+
+    public int getPlayer_kills() {
+        return player_kills;
+    }
+
+    public void setPlayer_kills(int player_kills) {
+        this.player_kills = player_kills;
+    }
+
 
 
 

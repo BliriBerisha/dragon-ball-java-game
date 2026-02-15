@@ -32,6 +32,7 @@ public class Goku extends Fighter{
     public void specialMoveUse(Fighter fighter) {
         if (KI >= getUltimateGenerator()) {
             KI -= (getUltimateGenerator() * 0.5);
+        player_score += 100;
         System.out.println("Ka...mee...haa..meeeeee.. HAAAAAAAAAA!");
         double ultimateDamage = getUltimateGenerator();
         fighter.takeUltimateDamage(ultimateDamage);

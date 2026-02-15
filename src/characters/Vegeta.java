@@ -19,6 +19,7 @@ public class Vegeta extends Fighter{
     }
     @Override
     public void specialMoveUse(Fighter fighter) {
+        player_score += 100;
         System.out.println("GALICK..... GUNNNNNNNNN...!!!");
         double ultimateDamage = getUltimateGenerator();
         fighter.takeUltimateDamage(ultimateDamage);

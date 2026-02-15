@@ -30,6 +30,7 @@ public class Main {
          scene.checkGameOver();
 
          FormStatsTable.printFor(vegeta);
+         scene.showLeaderboard();
 
         
         
