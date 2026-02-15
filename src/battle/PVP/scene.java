@@ -24,7 +24,6 @@ public class Scene {
 
     
     public void checkGameOver() {
-        // no one alive
         if (current_alive == 0) {
             System.out.println("Everyone is dead!!");
         } else if (current_alive == 1) {
@@ -38,6 +37,8 @@ public class Scene {
 
 
 }
+
+
 
 public void addPlayerToScene(Fighter fighter) {
     fighter.setScene(this);
